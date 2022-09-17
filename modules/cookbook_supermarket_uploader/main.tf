@@ -21,6 +21,7 @@ resource "kubernetes_deployment" "deployment" {
         }
       }
       spec {
+        automount_service_account_token = false
         container {
           name  = "cookbook-supermarket-uploader"
           image = "xorima/cookbook_supermarket_uploader:${var.app_version}"

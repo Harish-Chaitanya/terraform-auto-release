@@ -21,5 +21,5 @@ data "kubernetes_service" "nginx-ingress" {
 }
 
 locals {
-  kubernetes_public_ip = data.kubernetes_service.nginx-ingress.load_balancer_ingress.0.ip
+  kubernetes_public_ip = data.kubernetes_service.nginx-ingress.status.0.load_balancer.0.ingress.0.ip
 }

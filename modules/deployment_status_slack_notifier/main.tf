@@ -21,6 +21,7 @@ resource "kubernetes_deployment" "deployment" {
         }
       }
       spec {
+        automount_service_account_token = false
         container {
           name  = "deployment-status-slack-notifier"
           image = "xorima/deployment_status_slack_notifier:${var.app_version}"

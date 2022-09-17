@@ -17,6 +17,7 @@ resource "kubernetes_cron_job" "file-manager" {
         template {
           metadata {}
           spec {
+            automount_service_account_token = false
             container {
               name  = "github-file-manager"
               image = "xorima/github-file-manager:${var.app_version}"

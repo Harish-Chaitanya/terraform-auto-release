@@ -21,6 +21,7 @@ resource "kubernetes_deployment" "deployment" {
         }
       }
       spec {
+        automount_service_account_token = false
         container {
           name  = "cookbook-release-creator"
           image = "xorima/cookbook_release_creator:${var.app_version}"

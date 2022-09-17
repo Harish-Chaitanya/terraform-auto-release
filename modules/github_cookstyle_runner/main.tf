@@ -17,6 +17,7 @@ resource "kubernetes_cron_job" "cookstyle-runner" {
         template {
           metadata {}
           spec {
+            automount_service_account_token = false
             container {
               name  = "github-cookstyle-runner"
               image = "xorima/github-cookstyle-runner:${var.app_version}"

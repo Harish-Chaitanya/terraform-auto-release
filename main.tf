@@ -13,6 +13,7 @@ resource "digitalocean_project" "auto-release" {
   description = "A project to hold all resources related to the running and monitoring of the auto release system"
   purpose     = "Service or API"
   environment = var.environment
+  is_default  = true
 }
 
 module "auto-release_cluster" {

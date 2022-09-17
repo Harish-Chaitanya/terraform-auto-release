@@ -21,6 +21,7 @@ resource "kubernetes_deployment" "deployment" {
         }
       }
       spec {
+        automount_service_account_token = false
         container {
           name  = "changelog-validator"
           image = "xorima/changelog_validator:${var.app_version}"

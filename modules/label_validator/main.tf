@@ -22,6 +22,7 @@ resource "kubernetes_deployment" "deployment" {
         }
       }
       spec {
+        automount_service_account_token = false
         container {
           name  = "label-validator"
           image = "xorima/labelvalidator:${var.app_version}"

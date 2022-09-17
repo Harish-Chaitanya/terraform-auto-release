@@ -17,6 +17,7 @@ resource "kubernetes_cron_job" "label-manager" {
         template {
           metadata {}
           spec {
+            automount_service_account_token = false
             container {
               name  = "github-label-manager"
               image = "xorima/github-label-manager:${var.app_version}"
